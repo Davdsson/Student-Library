@@ -1,5 +1,7 @@
 package com.library;
 
+import java.util.ArrayList;
+
 public class Users {
     String u_firstname;
     String u_lastname;
@@ -7,7 +9,12 @@ public class Users {
     String u_username;
     String u_password;
     String u_phone;
-     public Users(){};
+
+    public Users() {
+    }
+
+    ;
+
     public Users(String u_firstname, String u_lastname, String u_email, String u_username, String u_password, String u_phone) {
         this.u_firstname = u_firstname;
         this.u_lastname = u_lastname;
@@ -16,8 +23,6 @@ public class Users {
         this.u_password = u_password;
         this.u_phone = u_phone;
     }
-
-
 
 
     public String getU_firstname() {
@@ -69,34 +74,49 @@ public class Users {
     }
 
     //-------Account Creating Function---------------
-    public  boolean Users_is_Creating_Account(String u_firstname, String u_lastname, String u_email, String u_username, String u_password, String u_phone){
+    public boolean Users_is_Creating_Account(String u_firstname, String u_lastname, String u_email, String u_username, String u_password, String u_phone) {
+       // Users newuser = new Users();
+       // ArrayList lst = new ArrayList();
+       // lst.add(newuser);
 
-        return false; //---Just do not Have Errorrr ---
+       // return lst;
+
+        ArrayList<Users> personList = new ArrayList<Users>();
+        personList.add(Users.this);
+        return true;
+        //return false; //---Just do not Have Errorrr ---
+
     }
+
     //-------Account Deleting Function-----------
-    public  boolean Users_is_deleting_Account(String u_email){
+    public boolean Users_is_deleting_Account(String u_email) {
 
         return false; //------------ Just do not Have Errorrr --------------
     }
+
     //------Account Updating Function---------------
-    public  boolean Users_is_Editing_Account(String u_firstname, String u_lastname, String u_email, String u_username, String u_password, String u_phone){
+    public boolean Users_is_Editing_Account(String u_firstname, String u_lastname, String u_email, String u_username, String u_password, String u_phone) {
 
         return false; //------------ Just do not Have Errorrr --------------
     }
 
     //--Account Login Function-
-    public  boolean Users_is_Loging_Account(String u_email, String u_password){
+    public boolean Users_is_Loging_Account(String u_email, String u_password) {
+        Users newuser = new Users();
+        if (newuser.u_email == u_email) {
+            return true;
+        } else {
+            return false;   //---Just do not Have Errorrr ---
+        }
+    }
+        //---Account Logout Function---
+        public boolean Users_is_Logout_Account () {
 
-        return false;   //---Just do not Have Errorrr ---
+            return false; //------------ Just do not Have Errorrr --------------
+
+
+        }
+
     }
 
-    //---Account Logout Function---
-    public  boolean Users_is_Logout_Account(){
-
-        return false; //------------ Just do not Have Errorrr --------------
-
-
-    }
-
-}
 //------------------------END OF CLASS--------------------

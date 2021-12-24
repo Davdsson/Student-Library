@@ -1,15 +1,15 @@
 package com.library;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class KForgotActivity extends AppCompatActivity {
+
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,18 @@ public class KForgotActivity extends AppCompatActivity {
             return;
         }
         else{
-            MessageDialog newobject = new MessageDialog();
-            newobject.MessageDialog();
+           // MessageDialog newobject = new MessageDialog();
+           // newobject.MessageDialog();
+            builder = new AlertDialog.Builder(this);
 
-            return;
+            builder.setMessage(" password Reset link has been sent to your email adress");
+
+            AlertDialog alert = builder.create();
+            //Setting the title manually
+
+            alert.setTitle("Password Reset Email");
+            alert.show();
+
         }
     }
 
